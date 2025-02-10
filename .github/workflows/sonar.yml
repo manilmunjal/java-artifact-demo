@@ -30,11 +30,11 @@ jobs:
 
       - name: Run SonarQube Analysis
         run: |
-          sonar-scanner \
-            -Dsonar.projectKey=YOUR_PROJECT_KEY \
-            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-            -Dsonar.sources=.
+              sonar-scanner \
+                -Dsonar.projectKey=backstage \
+                -Dsonar.sources=. \
+                -Dsonar.host.url=http://20.55.43.12:9000 \
+                -Dsonar.token=sqp_81d2429d629e5a6aeb72e19907b063635cc858f9
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
