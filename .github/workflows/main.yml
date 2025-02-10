@@ -1,3 +1,38 @@
+# name: Build JAR
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       - name: Set up JDK
+#         uses: actions/setup-java@v3
+#         with:
+#           distribution: 'temurin'
+#           java-version: '17'
+
+#       - name: Compile Java application
+#         run: javac HelloWorld.java
+
+#       - name: Create JAR file
+#         run: |
+#           jar cvfe HelloWorld.jar HelloWorld HelloWorld.class
+
+#       - name: Upload JAR artifact
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: hello-world-jar
+#           path: HelloWorld.jar
+
 name: Build JAR
 
 on:
@@ -12,10 +47,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up JDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
@@ -28,7 +63,8 @@ jobs:
           jar cvfe HelloWorld.jar HelloWorld HelloWorld.class
 
       - name: Upload JAR artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hello-world-jar
           path: HelloWorld.jar
+
